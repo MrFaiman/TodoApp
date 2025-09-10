@@ -54,6 +54,11 @@ app.get("/api/health", (req: Request, res: Response) => {
     });
 });
 
+// Routes
+import { userRoutes, taskRoutes } from "./routes";
+app.use("/api/users", userRoutes)
+app.use("/api/tasks", taskRoutes)
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     console.log(`Visit http://localhost:${PORT} to see the server`);
